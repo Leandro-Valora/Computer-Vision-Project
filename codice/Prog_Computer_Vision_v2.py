@@ -152,7 +152,7 @@ if(downld == "s"):
         sys.exit()
 
     h0, w0 = frame_test.shape[:2]
-    scala0  = 480 / max(h0, w0)
+    scala0  = targetSize / max(h0, w0)
     outW    = int(w0 * scala0)
     outH    = int(h0 * scala0)
 
@@ -163,8 +163,8 @@ if(downld == "s"):
     cartellaOutput = 'C:/Users/A/Desktop/MAGISTRALE/Fondamenti IA/Progetto Esame/output/'
     os.makedirs(cartellaOutput, exist_ok=True)   # la crea se non esiste
 
-    # Nome file output: es. "Small Tornado on a Parking Lot_MOG2_mask.mp4"
-    nomeOutput = f"{menuChose}_{algChose}_mask.mp4"
+    # Nome file output
+    nomeOutput = f"{menuChose}_{settingChose}_{algChose}_mask.mp4"
     pathOutput = os.path.join(cartellaOutput, nomeOutput)
 
     # VideoWriter: codec mp4v, stessi FPS del video originale, dimensione frame ridimensionato
